@@ -1,0 +1,26 @@
+<div class="card mt-5">
+    <div class="card-body mt-2">
+        <h3 style="text-align: center;">Sửa thông tin sách</h3>
+    </div>
+    <div class="card-body">
+        <div [hidden]="submitted" style="width: 1000px;">
+            <form #update="ngForm" (ngSubmit)="onSubmit()" style="margin-left: 100px;">
+                <div class="form-group">
+                    <label for="name">Tên sách :</label>
+                    <input type="text" class="form-control" required [(ngModel)]="book.title" name="bookName">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Tác Giả :</label>
+                    <input type="text" class="form-control" required [(ngModel)]="book.author" name="author">
+                </div>
+                <div class="form-group">
+                    <label for="name">Mô tả:</label>
+                    <textarea type="text" class="form-control" required [(ngModel)]="book.description" name="description"></textarea>
+                </div>
+                <button type="submit" class="edit btn btn-success">Cập nhật</button>
+                <button (click)="gotoList()" class="btn btn-primary ml-2">Thoát </button>
+            </form>
+        </div>
+    </div>
+</div>
